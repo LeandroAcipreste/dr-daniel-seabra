@@ -1,0 +1,67 @@
+/* =============================================================
+   PRELOADER
+   Cortina que sobe revelando a página. Enquanto está na tela,
+   acompanha o carregamento real das imagens do hero — não é um
+   timer falso: em conexão rápida, ele sai rápido.
+   ============================================================= */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-loader);
+  display: grid;
+  place-items: center;
+  background: var(--c-ink);
+  color: var(--c-text-on-dark);
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 1s var(--ease-out);
+}
+.loader[data-done="true"] {
+  clip-path: inset(0 0 100% 0);
+  pointer-events: none;
+}
+
+.loader__inner {
+  display: grid;
+  justify-items: center;
+  gap: 2.4rem;
+  transition: opacity .4s var(--ease), transform .6s var(--ease-out);
+}
+.loader[data-done="true"] .loader__inner {
+  opacity: 0;
+  transform: translateY(-2rem);
+}
+
+.loader__mark {
+  width: clamp(6rem, 8vw, 9rem);
+  filter: drop-shadow(0 1rem 3rem rgba(53, 179, 193, .35));
+  animation: loader-breathe 2.4s var(--ease) infinite;
+}
+@keyframes loader-breathe {
+  0%, 100% { transform: scale(1); opacity: .9; }
+  50%      { transform: scale(1.06); opacity: 1; }
+}
+
+.loader__bar {
+  width: clamp(18rem, 24vw, 32rem);
+  height: 2px;
+  background: var(--c-ink-3);
+  overflow: hidden;
+}
+.loader__bar i {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--c-accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform .4s var(--ease-out);
+}
+
+.loader__count {
+  font-family: var(--f-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.14em;
+  color: var(--c-muted-on-dark);
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,72 @@
+/* =============================================================
+   MARQUEE
+   Faixa infinita em CSS puro. O JS só duplica o conteúdo até
+   cobrir duas vezes a largura da tela — a animação em si é
+   translateX(-50%), que é barato e não depende de rAF.
+   ============================================================= */
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee-slide var(--marquee-dur, 38s) linear infinite;
+  will-change: transform;
+}
+.marquee--reverse .marquee__track { animation-direction: reverse; }
+
+/* Faixa amarrada ao scroll: quem move é o GSAP, então o laço
+   contínuo do CSS sai de cena para os dois não se sobreporem. */
+[data-marquee-scroll] .marquee__track { animation: none; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+
+.marquee__group {
+  display: flex;
+  align-items: center;
+  gap: clamp(2.4rem, 4vw, 6rem);
+  padding-right: clamp(2.4rem, 4vw, 6rem);
+  flex-shrink: 0;
+}
+
+@keyframes marquee-slide {
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+/* Item de credencial: rótulo + separador em losango. */
+.marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(2.4rem, 4vw, 6rem);
+  font-family: var(--f-display);
+  font-size: clamp(1.8rem, 2.1vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+.marquee__item::after {
+  content: '';
+  width: .9rem; height: .9rem;
+  rotate: 45deg;
+  background: var(--c-accent);
+  flex-shrink: 0;
+}
+
+/* Variante tipográfica gigante usada como transição entre blocos. */
+.marquee--display .marquee__item {
+  font-size: clamp(5rem, 11vw, 15rem);
+  line-height: .9;
+  letter-spacing: -0.045em;
+}
+.marquee--display .marquee__item::after { width: 1.6rem; height: 1.6rem; }
+/* Contorno vazado. O stroke precisa de cor propria: com
+   color:transparent, "currentColor" no contorno tambem some. */
+.marquee--outline .marquee__item {
+  -webkit-text-stroke: 1px var(--c-accent);
+  color: transparent;
+}

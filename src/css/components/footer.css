@@ -1,0 +1,131 @@
+/* =============================================================
+   FOOTER
+   Fecha o site com o mesmo peso do hero: uma chamada tipográfica
+   grande, depois os dados frios (endereços, CRM, aviso legal)
+   num rodapé compacto. Contato nunca fica escondido em letra
+   miúda — é o ponto de conversão final.
+   ============================================================= */
+
+.footer {
+  position: relative;
+  background: var(--c-ink);
+  color: var(--c-text-on-dark);
+  overflow: hidden;
+}
+
+.footer__cta {
+  position: relative;
+  padding-block: clamp(7rem, 10vw, 14rem);
+  text-align: center;
+}
+
+.footer__cta-title {
+  font-size: var(--t-mega);
+  line-height: .88;
+  margin-bottom: clamp(3rem, 4vw, 5rem);
+}
+.footer__cta-title .em { color: var(--c-accent); }
+
+.footer__cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+/* Halo turquesa atrás do CTA — dá profundidade ao bloco escuro
+   sem introduzir um gradiente arbitrário no fundo inteiro. */
+.footer__glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(120rem, 130vw);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  background: radial-gradient(circle, rgba(53, 179, 193, .22), transparent 62%);
+  pointer-events: none;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: clamp(3rem, 4vw, 6rem);
+  padding-block: clamp(4.4rem, 5.5vw, 7rem);
+  border-top: 1px solid var(--c-ink-3);
+}
+@media (max-width: 1000px) { .footer__grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px)  { .footer__grid { grid-template-columns: 1fr; } }
+
+.footer__brand { display: grid; gap: 2rem; align-content: start; }
+.footer__brand img { width: 6.4rem; }
+.footer__brand p { color: var(--c-muted-on-dark); max-width: 34ch; }
+
+.footer__col-title {
+  color: var(--c-brand);
+  margin-bottom: 2.4rem;
+}
+
+.footer__list { display: grid; gap: 1.2rem; }
+.footer__list a,
+.footer__list span { color: var(--c-muted-on-dark); transition: color .3s var(--ease); }
+.footer__list a:hover { color: var(--c-accent); }
+
+.footer__place {
+  display: grid;
+  gap: .4rem;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid var(--c-ink-3);
+}
+.footer__place:first-of-type { border-top: 1px solid var(--c-ink-3); }
+.footer__place strong { font-weight: 600; }
+.footer__place span { color: var(--c-muted-on-dark); font-size: var(--t-sm); }
+.footer__place a {
+  justify-self: start;
+  margin-top: .6rem;
+  font-size: var(--t-sm);
+  color: var(--c-brand);
+}
+
+.footer__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  padding-block: 3rem;
+  border-top: 1px solid var(--c-ink-3);
+  font-size: var(--t-sm);
+  color: var(--c-muted-on-dark);
+}
+
+/* Aviso de responsabilidade técnica: exigência do CFM e, ao mesmo
+   tempo, sinal de seriedade para o paciente. */
+.footer__legal {
+  max-width: 88ch;
+  padding-bottom: 3rem;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #6b8c92;
+}
+
+/* ---- Barra flutuante de contato (mobile) ---- */
+.dock {
+  position: fixed;
+  left: 1.6rem; right: 1.6rem; bottom: 1.6rem;
+  z-index: var(--z-nav);
+  display: none;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 70rem;
+  background: rgba(6, 35, 42, .82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1.6rem 4rem -1rem rgba(0, 0, 0, .5);
+  transform: translateY(150%);
+  transition: transform .6s var(--ease-out);
+}
+.dock[data-show="true"] { transform: translateY(0); }
+.dock .btn { flex: 1; }
+.dock .btn__inner { justify-items: center; padding: 1.4rem 1rem; }
+
+@media (max-width: 760px) { .dock { display: flex; } }

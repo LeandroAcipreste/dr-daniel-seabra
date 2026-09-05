@@ -1,0 +1,18 @@
+# Material de referência: snapshots pesados do site atual e do site
+# usado como referência de padrões. Ficam fora do repositório porque
+# não fazem parte do produto e somam quase 15 MB.
+desginsystem/
+
+# Configuração local de ferramenta: as skills do projeto e os ajustes
+# do editor. Ficam na máquina, não no repositório.
+.claude/
+.vscode/
+
+# Sistema operacional e editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Dependências, caso o projeto ganhe build no futuro
+node_modules/
+dist/

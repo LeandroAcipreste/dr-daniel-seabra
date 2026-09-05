@@ -1,0 +1,75 @@
+/* =============================================================
+   ACCORDION (FAQ)
+   Uma pergunta aberta por vez. A altura é animada por
+   grid-template-rows: 0fr -> 1fr, que anima de verdade sem
+   precisar medir scrollHeight no JS.
+   ============================================================= */
+
+.acc { border-top: 1px solid var(--c-ink-3); }
+
+.acc__item { border-bottom: 1px solid var(--c-ink-3); }
+
+.acc__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.4rem;
+  width: 100%;
+  padding: clamp(2.4rem, 3vw, 3.6rem) 0;
+  text-align: left;
+  font-family: var(--f-display);
+  font-size: clamp(1.9rem, 2.4vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.028em;
+  line-height: 1.15;
+  transition: color .3s var(--ease);
+}
+.acc__trigger:hover { color: var(--c-accent); }
+
+.acc__sign {
+  position: relative;
+  flex-shrink: 0;
+  width: 4.4rem; height: 4.4rem;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px currentColor;
+  transition: background-color .35s var(--ease), color .35s var(--ease),
+              rotate .5s var(--ease-out);
+}
+.acc__sign::before,
+.acc__sign::after {
+  content: "";
+  position: absolute;
+  inset: 50% 34%;
+  height: 1px;
+  background: currentColor;
+  transition: transform .45s var(--ease-out), opacity .3s var(--ease);
+}
+.acc__sign::after { rotate: 90deg; }
+
+.acc__item[data-open="true"] .acc__sign {
+  rotate: 135deg;
+  background: var(--c-accent);
+  color: var(--c-ink);
+}
+.acc__item[data-open="true"] .acc__sign::after { opacity: 0; }
+
+.acc__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .55s var(--ease-out);
+}
+.acc__item[data-open="true"] .acc__panel { grid-template-rows: 1fr; }
+
+.acc__panel > div { overflow: hidden; }
+
+.acc__body {
+  max-width: 62ch;
+  padding-bottom: clamp(2.4rem, 3vw, 3.6rem);
+  color: var(--c-muted-on-dark);
+  font-size: var(--t-lead);
+  line-height: 1.55;
+  opacity: 0;
+  transform: translateY(1.2rem);
+  transition: opacity .4s var(--ease) .1s, transform .5s var(--ease-out) .1s;
+}
+.acc__item[data-open="true"] .acc__body { opacity: 1; transform: translateY(0); }

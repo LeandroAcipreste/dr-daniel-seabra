@@ -1,0 +1,66 @@
+/* =============================================================
+   CURSOR
+   Só existe em ponteiro fino. Um ponto que acompanha o mouse e
+   um anel que persegue com atraso — o anel cresce e ganha rótulo
+   sobre elementos interativos, funcionando como affordance
+   extra, não como enfeite.
+   ============================================================= */
+
+.cursor { display: none; }
+
+@media (hover: hover) and (pointer: fine) {
+  .cursor {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: var(--z-cursor);
+    display: grid;
+    place-items: center;
+    width: 3.6rem; height: 3.6rem;
+    margin: -1.8rem 0 0 -1.8rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px var(--c-ink);
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: width .35s var(--ease-out), height .35s var(--ease-out),
+                margin .35s var(--ease-out), background-color .3s var(--ease),
+                opacity .3s var(--ease);
+    will-change: transform;
+  }
+  .cursor::before {
+    content: "";
+    width: .4rem; height: .4rem;
+    border-radius: 50%;
+    background: var(--c-ink);
+    transition: opacity .25s var(--ease);
+  }
+  .cursor__label {
+    position: absolute;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--c-ink);
+    opacity: 0;
+    transform: scale(.7);
+    transition: opacity .25s var(--ease), transform .35s var(--ease-out);
+  }
+
+  .cursor[data-state="hover"] {
+    width: 6.4rem; height: 6.4rem;
+    margin: -3.2rem 0 0 -3.2rem;
+    background: var(--c-accent);
+    box-shadow: none;
+  }
+  .cursor[data-state="hover"]::before { opacity: 0; }
+  .cursor[data-state="hover"] .cursor__label { opacity: 1; transform: scale(1); }
+  .cursor[data-state="hidden"] { opacity: 0; }
+
+  /* Com cursor customizado ligado, escondemos o nativo só onde a
+     interação é apontar/clicar — campos de texto mantêm o I-beam. */
+  html.has-cursor,
+  html.has-cursor a,
+  html.has-cursor button,
+  html.has-cursor [data-cursor] { cursor: none; }
+  html.has-cursor input,
+  html.has-cursor textarea { cursor: text; }
+}

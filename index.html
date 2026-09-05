@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <title>Dr. Marcos Daniel Seabra · Dermatologista em Aracaju | Clínica e Cirúrgica</title>
+  <meta name="description" content="Dermatologia clínica e cirúrgica em Aracaju. Psoríase, hidradenite, dermatite atópica, acne e diagnóstico precoce de câncer de pele com dermatoscopia. CRM-SE 5939 · RQE 4581." />
+  <meta name="author" content="Dr. Marcos Daniel Seabra" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://drmarcosdanielseabra.com/" />
+  <meta name="theme-color" content="#06232a" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Dr. Marcos Daniel Seabra" />
+  <meta property="og:title" content="Dr. Marcos Daniel Seabra · Dermatologista em Aracaju" />
+  <meta property="og:description" content="Dermatologia clínica e cirúrgica. Você sai da consulta sabendo o nome da sua doença e com o plano por escrito." />
+  <meta property="og:url" content="https://drmarcosdanielseabra.com/" />
+  <meta property="og:image" content="https://drmarcosdanielseabra.com/assets/images/pages/home/dr-retrato.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/assets/images/shared/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/images/shared/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Geist:wght@300..700&display=swap" />
+
+  <!-- O retrato do hero e a máscara que o recorta são carregados
+       juntos: se a máscara chegar depois, a foto aparece por um
+       instante com o fundo branco do estúdio sobre o bloco escuro. -->
+  <link rel="preload" as="image" href="/assets/images/pages/home/dr-recorte.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/images/pages/home/dr-recorte-mask.png" fetchpriority="high" />
+
+  <link rel="stylesheet" href="/src/css/style.css" />
+  <link rel="stylesheet" href="/src/pages/home/home.css" />
+
+  <!-- Desliga a restauração de rolagem do navegador antes de qualquer
+       pintura. Sem isso, um F5 no meio da página devolve a pessoa ao
+       ponto onde ela parou, e a apresentação do consultório (a
+       primeira dobra) nunca acontece. O resto do reset roda no
+       main.js, que também cuida do hash e do bfcache. -->
+  <script>
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr. Marcos Daniel Seabra",
+    "medicalSpecialty": "Dermatology",
+    "url": "https://drmarcosdanielseabra.com/",
+    "image": "https://drmarcosdanielseabra.com/assets/images/pages/home/dr-retrato.jpg",
+    "telephone": "+55-79-99953-8910",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Aracaju",
+      "addressRegion": "SE",
+      "addressCountry": "BR"
+    },
+    "sameAs": ["https://www.instagram.com/drmarcosdanielseabra"],
+    "availableService": [
+      { "@type": "MedicalProcedure", "name": "Consulta dermatológica" },
+      { "@type": "MedicalProcedure", "name": "Dermatoscopia" },
+      { "@type": "MedicalProcedure", "name": "Biópsia de pele" },
+      { "@type": "MedicalProcedure", "name": "Cirurgia dermatológica" }
+    ]
+  }
+  </script>
+</head>
+
+<body data-page="home">
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ============================================================
+       PRELOADER
+       ============================================================ -->
+  <div class="loader" data-loader role="status" aria-live="polite">
+    <div class="loader__inner">
+      <img class="loader__mark" src="/assets/images/shared/logo.png" alt="" width="120" height="130" />
+      <div class="loader__bar"><i data-loader-bar></i></div>
+      <span class="loader__count" data-loader-count>000</span>
+      <span class="sr-only">Carregando o site</span>
+    </div>
+  </div>
+
+  <!-- Cursor customizado (só aparece em ponteiro fino) -->
+  <div class="cursor" data-cursor-root aria-hidden="true">
+    <span class="cursor__label" data-cursor-label></span>
+  </div>
+
+  <!-- ============================================================
+       NAVEGAÇÃO
+       ============================================================ -->
+  <header class="nav" data-nav>
+    <span class="nav__plate" aria-hidden="true"></span>
+
+    <a class="nav__brand" href="#top" aria-label="Dr. Marcos Daniel Seabra, início">
+      <img src="/assets/images/shared/logo.png" alt="" width="76" height="82" />
+      <span class="nav__brand-text">
+        <span class="nav__brand-name">Marcos Daniel Seabra</span>
+        <span class="nav__brand-role">Dermatologista</span>
+      </span>
+    </a>
+
+    <nav class="nav__menu" aria-label="Navegação principal">
+      <a class="nav__link" href="#condicoes" data-text="O que tratamos"><span>O que tratamos</span></a>
+      <a class="nav__link" href="#jornada" data-text="A consulta"><span>A consulta</span></a>
+      <a class="nav__link" href="#sobre" data-text="Sobre"><span>Sobre</span></a>
+      <a class="nav__link" href="#autoexame" data-text="Autoexame"><span>Autoexame</span></a>
+      <a class="nav__link" href="#duvidas" data-text="Dúvidas"><span>Dúvidas</span></a>
+    </nav>
+
+    <div class="nav__ctas">
+      <a class="nav__phone" href="tel:+5579999538910">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        (79) 99953-8910
+      </a>
+
+      <a class="btn btn--accent btn--nav" data-cursor="agendar"
+         href="https://api.whatsapp.com/send?phone=5579999538910&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
+         target="_blank" rel="noopener">
+        <span class="btn__wipe" aria-hidden="true"></span>
+        <span class="btn__inner" data-text="Agendar consulta"><span class="btn__text">Agendar consulta</span></span>
+      </a>
+
+      <button class="nav__burger" data-burger type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="sr-only">Abrir menu</span>
+        <span class="nav__burger-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu em tela cheia (mobile) -->
+  <div class="menu" id="menu-principal" data-menu data-open="false">
+    <ul class="menu__list">
+      <li class="menu__item"><a class="menu__link" href="#condicoes">O que tratamos</a></li>
+      <li class="menu__item"><a class="menu__link" href="#jornada">A consulta</a></li>
+      <li class="menu__item"><a class="menu__link" href="#sobre">Sobre o médico</a></li>
+      <li class="menu__item"><a class="menu__link" href="#autoexame">Autoexame ABCDE</a></li>
+      <li class="menu__item"><a class="menu__link" href="#depoimentos">Depoimentos</a></li>
+      <li class="menu__item"><a class="menu__link" href="#duvidas">Dúvidas frequentes</a></li>
+    </ul>
+    <div class="menu__foot">
+      <div>
+        <p>CRM-SE 5939 · RQE 4581</p>
+        <p>Aracaju · Sergipe</p>
+      </div>
+      <div>
+        <a href="tel:+5579999538910">(79) 99953-8910</a><br />
+        <a href="https://www.instagram.com/drmarcosdanielseabra" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="conteudo">
+
+    <!-- ==========================================================
+         1. HERO
+         ========================================================== -->
+    <section class="hero" id="top">
+      <span class="hero__blob" aria-hidden="true"></span>
+
+      <div class="shell hero__shell">
+        <div class="hero__grid">
+
+          <div class="hero__copy">
+            <p class="hero__eyebrow label" data-reveal>
+              <i aria-hidden="true"></i>
+              Dermatologia clínica e cirúrgica · Aracaju
+            </p>
+
+            <h1 class="hero__title" data-split>
+              Sua pele merece um diagnóstico <em class="em">com nome</em>.
+            </h1>
+
+            <p class="hero__lead lead" data-reveal data-delay="2">
+              <strong>Dermatologista e farmacêutico.</strong> Investigo a causa, digo exatamente
+              qual é a doença e monto o protocolo. O acompanhamento continua depois que
+              você sai do consultório.
+            </p>
+
+            <div class="hero__actions" data-reveal data-delay="3">
+              <a class="btn btn--accent btn--lg" data-cursor="agendar"
+                 href="https://api.whatsapp.com/send?phone=5579999538910&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
+                 target="_blank" rel="noopener">
+                <span class="btn__wipe" aria-hidden="true"></span>
+                <span class="btn__inner" data-text="Agendar consulta"><span class="btn__text">Agendar consulta</span></span>
+              </a>
+              <a class="btn btn--ghost btn--lg" href="#condicoes" data-cursor="ver">
+                <span class="btn__wipe" aria-hidden="true"></span>
+                <span class="btn__inner" data-text="O que tratamos"><span class="btn__text">O que tratamos</span></span>
+              </a>
+            </div>
+          </div>
+
+          <figure class="hero__figure" data-reveal data-delay="2">
+            <img src="/assets/images/pages/home/dr-recorte.jpg"
+                 alt="Dr. Marcos Daniel Seabra, dermatologista, de braços cruzados e sorrindo"
+                 width="1000" height="1498" data-preload fetchpriority="high" />
+
+            <div class="hero__seal" aria-hidden="true">
+              <svg viewBox="0 0 100 100">
+                <defs>
+                  <path id="selo-hero" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" />
+                </defs>
+                <text><textPath href="#selo-hero">CRM-SE 5939 · RQE 4581 · Sociedade Brasileira de Dermatologia ·&nbsp;</textPath></text>
+              </svg>
+              <span class="hero__seal-core">Título<br />SBD</span>
+            </div>
+          </figure>
+
+        </div>
+
+        <div class="hero__foot" data-reveal data-delay="4">
+          <span class="hero__scroll" aria-hidden="true">
+            Role para ver
+            <i></i>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         2. CREDENCIAIS
+         ========================================================== -->
+    <section class="credentials" aria-label="Formação e credenciais">
+      <div class="marquee" data-marquee data-marquee-scroll data-speed="55">
+        <div class="marquee__track">
+          <div class="marquee__group">
+            <span class="marquee__item">Sociedade Brasileira de Dermatologia</span>
+            <span class="marquee__item">Residência no Hospital Universitário HU-UFS</span>
+            <span class="marquee__item">Doutorando pela UFS</span>
+            <span class="marquee__item">Dermatoscopia</span>
+            <span class="marquee__item">Cirurgia dermatológica</span>
+            <span class="marquee__item">Pesquisa premiada em hanseníase</span>
+            <span class="marquee__item">Farmacêutico e médico</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         3. MANIFESTO
+         ========================================================== -->
+    <section class="section manifesto">
+      <div class="shell">
+        <div class="manifesto__head" data-reveal>
+          <span class="label">O argumento</span>
+          <span>01 / 06</span>
+        </div>
+
+        <div class="manifesto__grid">
+          <p class="manifesto__statement" data-split>
+            A maior parte dos pacientes chega aqui <mark>sem saber o nome</mark>
+            da própria doença, depois de anos usando creme que apenas disfarça.
+            Tratar pele começa por <mark>dar um diagnóstico</mark>.
+          </p>
+
+          <div class="manifesto__aside">
+            <div class="diferencial" data-reveal data-delay="7">
+              <span class="diferencial__num" aria-hidden="true">01</span>
+              <h3>Farmacêutico antes de médico</h3>
+              <p>
+                Graduação em Farmácia, depois Medicina, depois residência em
+                Dermatologia. Isso muda a forma de ler uma prescrição: saber o que
+                a molécula faz, em qual veículo ela funciona e por que o creme
+                anterior não resolveu.
+              </p>
+            </div>
+
+            <div class="manifesto__note" data-reveal data-delay="8">
+              <span class="label">Por que isso importa</span>
+              <p>
+                Psoríase, dermatite atópica, hidradenite supurativa e hanseníase
+                chegavam ao consultório em estágio avançado, às vezes com sequela.
+                Quase sempre por atraso no diagnóstico, não por falta de tratamento
+                disponível.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         4. JORNADA (seção fixada)
+         ========================================================== -->
+    <section class="journey" id="jornada" data-journey aria-label="Como funciona a consulta">
+
+      <!-- Título e medidor ficam colados no topo enquanto os cards
+           passam por baixo. -->
+      <div class="journey__head">
+        <div class="shell journey__head-inner">
+          <div>
+            <span class="label">A consulta, passo a passo</span>
+            <h2 data-split>Da mensagem ao plano por escrito.</h2>
+          </div>
+          <div class="journey__meter">
+            <span class="journey__count" data-journey-count>01 / 05</span>
+            <span class="journey__bar" data-journey-progress aria-hidden="true"><i></i></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cada etapa ocupa uma tela inteira. O ScrollTrigger prende
+           cada uma no topo até a última chegar lá: a que está presa
+           fica parada, a de baixo sobe por cima, e a que sai tomba.
+           É o próprio scroll que empilha — não há timeline. -->
+      <div class="journey__cards" data-cards>
+
+        <div class="journey__wrap" data-wrap>
+          <article class="jcard jcard--soft" data-card>
+            <div class="jcard__top">
+              <span class="jcard__idx">01</span>
+              <span class="jcard__tag">Resposta no mesmo dia</span>
+            </div>
+            <div class="jcard__body">
+              <h3 class="jcard__title">Agendamento direto</h3>
+              <p class="jcard__text">Você fala com a equipe pelo WhatsApp e escolhe o horário dentro da sua disponibilidade. Sem formulário e sem fila de meses.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="journey__wrap" data-wrap>
+          <article class="jcard jcard--photo" data-card>
+            <img class="jcard__img" src="/assets/images/pages/home/dr-jaleco.jpg" alt="" width="700" height="1048" loading="lazy" decoding="async" />
+            <div class="jcard__top">
+              <span class="jcard__idx">02</span>
+              <span class="jcard__tag">Anamnese completa</span>
+            </div>
+            <div class="jcard__body">
+              <h3 class="jcard__title">Consulta sem pressa</h3>
+              <p class="jcard__text">Histórico, hábitos, o que já foi tentado e o que não funcionou. A maior parte do diagnóstico está aqui, na conversa.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="journey__wrap" data-wrap>
+          <article class="jcard jcard--deep" data-card>
+            <div class="jcard__top">
+              <span class="jcard__idx">03</span>
+              <span class="jcard__tag">Feito em consultório</span>
+            </div>
+            <div class="jcard__body">
+              <h3 class="jcard__title">Exame com dermatoscopia</h3>
+              <p class="jcard__text">Lesões e pintas examinadas com dermatoscópio: estruturas invisíveis a olho nu que separam o que acompanha do que precisa de biópsia.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="journey__wrap" data-wrap>
+          <article class="jcard jcard--accent" data-card>
+            <div class="jcard__top">
+              <span class="jcard__idx">04</span>
+              <span class="jcard__tag">Plano por escrito</span>
+            </div>
+            <div class="jcard__body">
+              <h3 class="jcard__title">Diagnóstico e protocolo</h3>
+              <p class="jcard__text">Você sai sabendo o nome da doença, o que esperar dela e qual é o plano de tratamento, com prazos definidos.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="journey__wrap" data-wrap>
+          <article class="jcard jcard--photo" data-card>
+            <img class="jcard__img" src="/assets/images/pages/home/dr-retrato.jpg" alt="" width="1025" height="1536" loading="lazy" decoding="async" />
+            <div class="jcard__top">
+              <span class="jcard__idx">05</span>
+              <span class="jcard__tag">Suporte 7 dias</span>
+            </div>
+            <div class="jcard__body">
+              <h3 class="jcard__title">Acompanhamento depois</h3>
+              <p class="jcard__text">Dúvida sobre o tratamento é respondida no WhatsApp, inclusive sábado e domingo. Retorno marcado desde o primeiro dia.</p>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         5. CONDIÇÕES TRATADAS
+         ========================================================== -->
+    <section class="section conditions" id="condicoes" data-conditions>
+      <div class="shell">
+
+        <div class="conditions__head">
+          <div data-reveal>
+            <span class="label">O que tratamos</span>
+            <h2>Doença de pele tem nome, estágio e tratamento.</h2>
+          </div>
+
+          <div class="toggle" role="tablist" aria-label="Áreas de atuação" data-reveal data-delay="1">
+            <span class="toggle__pill" data-toggle-pill aria-hidden="true"></span>
+            <button class="toggle__btn" role="tab" type="button" id="tab-clinica"
+                    aria-selected="true" aria-controls="painel-clinica">Dermatologia clínica</button>
+            <button class="toggle__btn" role="tab" type="button" id="tab-cirurgica"
+                    aria-selected="false" aria-controls="painel-cirurgica">Dermatologia cirúrgica</button>
+          </div>
+        </div>
+
+        <!-- Painel: clínica -->
+        <div class="conditions__panel" id="painel-clinica" role="tabpanel" aria-labelledby="tab-clinica">
+          <div class="conditions__grid">
+
+            <article class="cond" data-reveal>
+              <span class="cond__idx">01</span>
+              <div class="cond__body">
+                <h3>Psoríase</h3>
+                <p>
+                  Doença imunomediada, crônica e controlável. Existem protocolos que
+                  devolvem a pele e a qualidade de vida, incluindo os casos que já
+                  passaram por vários tratamentos sem resposta.
+                </p>
+              </div>
+              <div class="cond__foot">
+                <div class="cond__tags"><span>Imunomediada</span><span>Crônica</span><span>Controlável</span></div>
+                <span class="cond__go" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </span>
+              </div>
+            </article>
+
+            <article class="cond" data-reveal data-delay="1">
+              <span class="cond__idx">02</span>
+              <div class="cond__body">
+                <h3>Hidradenite supurativa</h3>
+                <p>
+                  Nódulos dolorosos em axila e virilha, confundidos com furúnculo
+                  por anos. Tem nome, tem estadiamento e tem tratamento.
+                </p>
+              </div>
+              <div class="cond__foot">
+                <div class="cond__tags"><span>Imunomediada</span></div>
+                <span class="cond__go" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </span>
+              </div>
+            </article>
+
+            <article class="cond" data-reveal data-delay="2">
+              <span class="cond__idx">03</span>
+              <div class="cond__body">
+                <h3>Dermatite atópica</h3>
+                <p>
+                  Coceira que tira o sono e pele que nunca fecha o ciclo. O controle
+                  começa por identificar o gatilho, não por trocar de hidratante.
+                </p>
+              </div>
+              <div class="cond__foot">
+                <div class="cond__tags"><span>Crônica</span></div>
+                <span class="cond__go" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </span>
+              </div>
+            </article>
+
+            <article class="cond" data-reveal>
+              <span class="cond__idx">04</span>
+              <div class="cond__body">
+                <h3>Alergias e prurido</h3>
+                <p>
+                  Antes de tratar a coceira, descobrir a causa. Investigação dirigida
+                  em vez de anti-histamínico por tempo indeterminado.
+                </p>
+              </div>
+              <div class="cond__foot">
+                <div class="cond__tags"><span>Investigação</span></div>
+                <span class="cond__go" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </span>
+              </div>
+            </article>
+
+            <article class="cond" data-reveal data-delay="1">
+              <span class="cond__idx">05</span>
+              <div class="cond__body">
+                <h3>Acne</h3>
+                <p>
+                  Da espinha ocasional à forma nódulo-cística. O tratamento muda
+                  conforme a gravidade: tópico, oral ou combinado.
+                </p>
+              </div>
+              <div class="cond__foot">
+                <div class="cond__tags"><span>Todas as idades</span></div>
+                <span class="cond__go" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </span>
+              </div>
+            </article>
+
+            <article class="cond" data-reveal data-delay="2">
+              <span class="cond__idx">06</span>
+              <div class="cond__body">
+                <h3>Hanseníase</h3>
+                <p>
+                  Diagnóstico que ainda chega tarde no Brasil. Tema da pesquisa
+                  premiada desenvolvida na UFS-Lagarto.
+                </p>
+              </div>
+              <div class="cond__foot">
+                <div class="cond__tags"><span>Diagnóstico precoce</span></div>
+                <span class="cond__go" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Painel: cirúrgica -->
+        <div class="conditions__panel" id="painel-cirurgica" role="tabpanel" aria-labelledby="tab-cirurgica" hidden>
+          <div class="conditions__grid">
+
+            <article class="cond">
+              <span class="cond__idx">01</span>
+              <div class="cond__body">
+                <h3>Câncer de pele</h3>
+                <p>
+                  Lesão suspeita se desenvolve em silêncio e nem sempre incomoda.
+                  Com dermatoscopia é possível identificar lesões pré-neoplásicas e
+                  câncer em estágio inicial, quando o tratamento é mais simples e
+                  mais eficaz.
+                </p>
+              </div>
+              <div class="cond__foot">
+                <div class="cond__tags"><span>Diagnóstico precoce</span><span>Dermatoscopia</span></div>
+                <span class="cond__go" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </span>
+              </div>
+            </article>
+
+            <article class="cond">
+              <span class="cond__idx">02</span>
+              <div class="cond__body">
+                <h3>Dermatoscopia</h3>
+                <p>
+                  Exame que amplia e ilumina a lesão, revelando padrões que definem
+                  se o caso é de acompanhar ou de biopsiar.
+                </p>
+              </div>
+              <div class="cond__foot">
+                <div class="cond__tags"><span>Em consultório</span></div>
+                <span class="cond__go" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </span>
+              </div>
+            </article>
+
+            <article class="cond">
+              <span class="cond__idx">03</span>
+              <div class="cond__body">
+                <h3>Biópsia de pele</h3>
+                <p>
+                  Quando a imagem não basta, o fragmento define. Procedimento feito
+                  em consultório, com anestesia local.
+                </p>
+              </div>
+              <div class="cond__foot">
+                <div class="cond__tags"><span>Anestesia local</span></div>
+                <span class="cond__go" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </span>
+              </div>
+            </article>
+
+            <article class="cond">
+              <span class="cond__idx">04</span>
+              <div class="cond__body">
+                <h3>Retirada de lesões</h3>
+                <p>
+                  Sinais, cistos e verrugas removidos com técnica cirúrgica, sempre
+                  após avaliação individual do caso.
+                </p>
+              </div>
+              <div class="cond__foot">
+                <div class="cond__tags"><span>Sob avaliação</span></div>
+                <span class="cond__go" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </span>
+              </div>
+            </article>
+
+            <article class="cond">
+              <span class="cond__idx">05</span>
+              <div class="cond__body">
+                <h3>Peeling químico</h3>
+                <p>
+                  Indicação clínica, não estética de vitrine. Usado quando o quadro
+                  pede renovação controlada da pele.
+                </p>
+              </div>
+              <div class="cond__foot">
+                <div class="cond__tags"><span>Indicação clínica</span></div>
+                <span class="cond__go" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </span>
+              </div>
+            </article>
+
+            <article class="cond">
+              <span class="cond__idx">06</span>
+              <div class="cond__body">
+                <h3>Cirurgia de lesões cutâneas</h3>
+                <p>
+                  Exérese planejada, com margens e fechamento pensados caso a caso,
+                  e encaminhamento quando o quadro exige equipe multidisciplinar.
+                </p>
+              </div>
+              <div class="cond__foot">
+                <div class="cond__tags"><span>Planejamento individual</span></div>
+                <span class="cond__go" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         6. NÚMEROS
+         ========================================================== -->
+    <section class="section numbers" aria-label="Dados do atendimento">
+      <div class="shell">
+        <div class="numbers__grid">
+
+          <div class="numbers__item" data-rise data-delay="0">
+            <div class="numbers__inner">
+              <b class="mono-num">5,0<sup>★</sup></b>
+              <h4>Avaliação dos pacientes</h4>
+              <p>Média das avaliações públicas no Google e na Doctoralia.</p>
+            </div>
+          </div>
+
+          <div class="numbers__item" data-rise data-delay="1">
+            <div class="numbers__inner">
+              <b class="mono-num">12x</b>
+              <h4>Formas de pagamento</h4>
+              <p>Dinheiro, PIX e cartão em até doze vezes. Convênios mediante consulta de condições.</p>
+            </div>
+          </div>
+
+          <div class="numbers__item" data-rise data-delay="2">
+            <div class="numbers__inner">
+              <b class="mono-num">7</b>
+              <h4>Dias de suporte</h4>
+              <p>Dúvida sobre o tratamento respondida no WhatsApp, sábado e domingo inclusive.</p>
+            </div>
+          </div>
+
+        </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         7. SOBRE
+         ========================================================== -->
+    <section class="section about" id="sobre">
+      <div class="shell">
+        <div class="about__grid">
+
+          <div class="about__media">
+            <div class="about__media-inner" data-clip>
+              <img src="/assets/images/pages/home/dr-retrato.jpg"
+                   alt="Retrato do Dr. Marcos Daniel Seabra"
+                   width="1025" height="1536" loading="lazy" data-parallax />
+
+              <div class="about__sticker" aria-hidden="true">
+                <svg viewBox="0 0 100 100">
+                  <defs>
+                    <path id="selo-sobre" d="M50,50 m-39,0 a39,39 0 1,1 78,0 a39,39 0 1,1 -78,0" />
+                  </defs>
+                  <text><textPath href="#selo-sobre">Farmacêutico · Médico · Dermatologista ·&nbsp;</textPath></text>
+                </svg>
+                <span class="about__sticker-core">MS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about__copy">
+            <span class="label" data-reveal>Sobre o médico</span>
+            <h2 data-split>Ser médico é a parte que eu escolhi duas vezes.</h2>
+
+            <p data-reveal data-delay="1">
+              Me formei em <strong>Farmácia</strong>, depois em <strong>Medicina</strong>, depois
+              fiz residência em <strong>Dermatologia</strong> no Hospital Universitário da UFS.
+              Não foi o caminho mais curto, e é exatamente por isso que ele mudou a
+              forma como eu trato pele.
+            </p>
+
+            <p data-reveal data-delay="2">
+              Atendi muita gente usando creme que não funcionava, resolvendo o problema
+              pela superfície. Muitos sem saber o nome da própria doença. Psoríase,
+              dermatite, hidradenite, câncer de pele e hanseníase chegando em estágio
+              avançado, às vezes com sequela, quase sempre por atraso no diagnóstico.
+            </p>
+
+            <p data-reveal data-delay="3">
+              Falar de dermatologia é falar de saúde. Viver sem coceira, sem insônia e
+              sem a angústia de não saber o que se tem é possível quando médico e
+              paciente trabalham alinhados.
+            </p>
+
+            <div class="about__reg" data-reveal data-delay="4">
+              <span>CRM-SE 5939</span>
+              <span>RQE 4581</span>
+            </div>
+
+            <ul class="quals" data-reveal data-delay="4">
+              <li>Título de especialista em Dermatologia pela Sociedade Brasileira de Dermatologia</li>
+              <li>Residência médica em Dermatologia no Hospital Universitário da UFS</li>
+              <li>Doutorando pela Universidade Federal de Sergipe</li>
+              <li>Premiação por pesquisa em hanseníase desenvolvida na UFS-Lagarto</li>
+            </ul>
+
+            <div data-reveal data-delay="5">
+              <a class="btn btn--ink btn--lg" data-cursor="agendar"
+                 href="https://api.whatsapp.com/send?phone=5579999538910&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
+                 target="_blank" rel="noopener">
+                <span class="btn__wipe" aria-hidden="true"></span>
+                <span class="btn__inner" data-text="Agendar consulta"><span class="btn__text">Agendar consulta</span></span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         Faixa de transição
+         ========================================================== -->
+    <div class="band band--brand" aria-hidden="true">
+      <div class="marquee marquee--display" data-marquee data-marquee-scroll="reverse" data-speed="90">
+        <div class="marquee__track">
+          <div class="marquee__group">
+            <span class="marquee__item">Diagnóstico precoce</span>
+            <span class="marquee__item">Pele saudável</span>
+            <span class="marquee__item">Sem achismo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================
+         8. AUTOEXAME ABCDE
+         ========================================================== -->
+    <section class="section abcde" id="autoexame" data-abcde>
+      <div class="shell">
+        <div class="abcde__grid">
+
+          <div class="abcde__intro">
+            <span class="label" data-reveal>Autoexame</span>
+            <h2 data-split>Cinco perguntas sobre a sua pinta.</h2>
+            <p data-reveal data-delay="1">
+              A regra ABCDE é o que dermatologistas usam para separar a pinta que só
+              precisa de acompanhamento daquela que precisa ser examinada de perto.
+              Marque o que você observa em uma mesma lesão.
+            </p>
+
+            <div class="abcde__disclaimer" data-reveal data-delay="2">
+              <strong>Isto não é um diagnóstico.</strong>
+              <span>
+                Nenhuma ferramenta on-line substitui o exame presencial com
+                dermatoscopia. O resultado ao lado é apenas uma orientação sobre
+                procurar avaliação.
+              </span>
+            </div>
+          </div>
+
+          <div class="abcde__panel" data-reveal data-delay="1">
+            <div class="abcde__list">
+
+              <label class="crit">
+                <input type="checkbox" name="abcde" value="a" />
+                <span class="crit__face">
+                  <span class="crit__letter" aria-hidden="true">A</span>
+                  <span class="crit__text">
+                    <b>Assimetria</b>
+                    <span>Uma metade da lesão é diferente da outra.</span>
+                  </span>
+                  <span class="crit__box" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m4 12 6 6L20 6"/></svg>
+                  </span>
+                </span>
+              </label>
+
+              <label class="crit">
+                <input type="checkbox" name="abcde" value="b" />
+                <span class="crit__face">
+                  <span class="crit__letter" aria-hidden="true">B</span>
+                  <span class="crit__text">
+                    <b>Bordas</b>
+                    <span>Contorno irregular, recortado ou mal definido.</span>
+                  </span>
+                  <span class="crit__box" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m4 12 6 6L20 6"/></svg>
+                  </span>
+                </span>
+              </label>
+
+              <label class="crit">
+                <input type="checkbox" name="abcde" value="c" />
+                <span class="crit__face">
+                  <span class="crit__letter" aria-hidden="true">C</span>
+                  <span class="crit__text">
+                    <b>Cor</b>
+                    <span>Mais de um tom na mesma pinta: marrom, preto, avermelhado ou esbranquiçado.</span>
+                  </span>
+                  <span class="crit__box" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m4 12 6 6L20 6"/></svg>
+                  </span>
+                </span>
+              </label>
+
+              <label class="crit">
+                <input type="checkbox" name="abcde" value="d" />
+                <span class="crit__face">
+                  <span class="crit__letter" aria-hidden="true">D</span>
+                  <span class="crit__text">
+                    <b>Diâmetro</b>
+                    <span>Maior que seis milímetros, aproximadamente o tamanho de uma borracha de lápis.</span>
+                  </span>
+                  <span class="crit__box" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m4 12 6 6L20 6"/></svg>
+                  </span>
+                </span>
+              </label>
+
+              <label class="crit">
+                <input type="checkbox" name="abcde" value="e" />
+                <span class="crit__face">
+                  <span class="crit__letter" aria-hidden="true">E</span>
+                  <span class="crit__text">
+                    <b>Evolução</b>
+                    <span>Mudou de tamanho, forma ou cor, ou passou a coçar e sangrar.</span>
+                  </span>
+                  <span class="crit__box" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m4 12 6 6L20 6"/></svg>
+                  </span>
+                </span>
+              </label>
+
+            </div>
+
+            <div class="abcde__result" data-abcde-result data-level="1" role="status" aria-live="polite">
+              <div class="abcde__meter" data-abcde-meter aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <p class="abcde__result-title" data-abcde-title>Nenhum sinal de alerta marcado.</p>
+              <p data-abcde-text>
+                Siga com o autoexame mensal e mantenha a avaliação dermatológica de
+                rotina.
+              </p>
+              <div class="abcde__actions">
+                <a class="btn btn--accent" data-cursor="agendar"
+                   href="https://api.whatsapp.com/send?phone=5579999538910&text=Ol%C3%A1%2C%20fiz%20o%20autoexame%20no%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
+                   target="_blank" rel="noopener">
+                  <span class="btn__wipe" aria-hidden="true"></span>
+                  <span class="btn__inner" data-text="Agendar avaliação"><span class="btn__text">Agendar avaliação</span></span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         9. DEPOIMENTOS
+         ========================================================== -->
+    <section class="section voices" id="depoimentos" data-voices tabindex="-1" aria-roledescription="carrossel" aria-label="Depoimentos de pacientes">
+      <div class="shell">
+
+        <div class="voices__head">
+          <div data-reveal>
+            <span class="label">Depoimentos</span>
+            <h2>O que os pacientes contam.</h2>
+          </div>
+
+          <div class="voices__nav">
+            <button class="icon-btn" type="button" data-voice-prev aria-label="Depoimento anterior">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg>
+            </button>
+            <span class="voices__count" data-voice-count aria-hidden="true">01 / 05</span>
+            <button class="icon-btn" type="button" data-voice-next aria-label="Próximo depoimento">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="voices__stage">
+
+          <blockquote class="voice" data-voice data-active="true">
+            <p class="voice__quote">
+              Tenho psoríase e, por causa dela, muitas dores e lesões na pele.
+              Sendo acompanhada pelo Dr. Marcos, <em>melhorei das dores e das lesões</em>.
+            </p>
+            <footer class="voice__meta">
+              <span class="voice__stars" aria-label="Cinco estrelas">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+              </span>
+              <cite class="voice__author">Eliana Santos dos Reis</cite>
+              <span class="voice__source">via Doctoralia</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="voice" data-voice>
+            <p class="voice__quote">
+              Doutor atencioso, educado, <em>explica muito bem e ouve o paciente</em>.
+              Consultório aconchegante. Vou me consultar mais vezes com ele.
+            </p>
+            <footer class="voice__meta">
+              <span class="voice__stars" aria-label="Cinco estrelas">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+              </span>
+              <cite class="voice__author">Gênesis</cite>
+              <span class="voice__source">via Doctoralia</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="voice" data-voice>
+            <p class="voice__quote">
+              Eu estava sofrendo com um problema na minha pele e já tinha ido a
+              inúmeros dermatologistas. Depois de me consultar com o Dr. Marcos,
+              em questão de semanas <em>minha pele já está com 90% de melhora</em>.
+            </p>
+            <footer class="voice__meta">
+              <span class="voice__stars" aria-label="Cinco estrelas">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+              </span>
+              <cite class="voice__author">Michelle Kaynã</cite>
+              <span class="voice__source">via Google</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="voice" data-voice>
+            <p class="voice__quote">
+              Excelente profissional, extremamente atencioso e muito bem qualificado.
+              <em>Conseguiu controlar a psoríase do meu esposo</em>, que já havia
+              passado por vários outros profissionais.
+            </p>
+            <footer class="voice__meta">
+              <span class="voice__stars" aria-label="Cinco estrelas">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+              </span>
+              <cite class="voice__author">Leila Cristina</cite>
+              <span class="voice__source">via Google</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="voice" data-voice>
+            <p class="voice__quote">
+              Ótimo atendimento, <em>começando pela secretaria</em> e terminando no
+              resultado da competência da equipe do Dr. Marcos. Parabéns a todos.
+            </p>
+            <footer class="voice__meta">
+              <span class="voice__stars" aria-label="Cinco estrelas">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg>
+              </span>
+              <cite class="voice__author">Charliton</cite>
+              <span class="voice__source">via Google</span>
+            </footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         10. COMO É A CONSULTA
+         ========================================================== -->
+    <section class="section care">
+      <div class="shell">
+        <div class="care__grid">
+
+          <div class="care__aside">
+            <div class="care__aside-inner">
+            <span class="label" data-reveal>A consulta</span>
+            <h2 data-split>O que muda quando o médico tem tempo.</h2>
+            <p data-reveal data-delay="1">
+              Nada aqui é cortesia de marketing. É o formato de atendimento que
+              permite fechar um diagnóstico na primeira consulta em vez de na quinta.
+            </p>
+            </div>
+          </div>
+
+          <div class="care__list">
+            <article class="care__item" data-reveal>
+              <div><h4>Horário flexível</h4><p>O agendamento é feito dentro da sua disponibilidade, não da agenda que sobrou.</p></div>
+              <b>01</b>
+            </article>
+            <article class="care__item" data-reveal>
+              <div><h4>Orientação em português</h4><p>Você entende o que tem, por que tem e o que o tratamento faz. Sem jargão para encurtar a consulta.</p></div>
+              <b>02</b>
+            </article>
+            <article class="care__item" data-reveal>
+              <div><h4>Equipe dedicada</h4><p>Atendimento rápido e humanizado desde o primeiro contato com a secretaria.</p></div>
+              <b>03</b>
+            </article>
+            <article class="care__item" data-reveal>
+              <div><h4>Foco em doenças de pele</h4><p>Cem por cento da atenção em dermatologia clínica e cirúrgica. Sem harmonização facial, sem botox, sem laser de rejuvenescimento.</p></div>
+              <b>04</b>
+            </article>
+            <article class="care__item" data-reveal>
+              <div><h4>Todas as idades</h4><p>Da pele do bebê à pele do idoso, com a abordagem que cada fase pede.</p></div>
+              <b>05</b>
+            </article>
+            <article class="care__item" data-reveal>
+              <div><h4>Medicina baseada em evidência</h4><p>Protocolos validados somados à experiência clínica, com a ética como limite não negociável.</p></div>
+              <b>06</b>
+            </article>
+            <article class="care__item" data-reveal>
+              <div><h4>Suporte pós-consulta</h4><p>Dúvida sobre o tratamento respondida no WhatsApp, incluindo sábado e domingo.</p></div>
+              <b>07</b>
+            </article>
+            <article class="care__item" data-reveal>
+              <div><h4>Retorno programado</h4><p>A data do retorno sai junto com o plano, para o tratamento não perder o fio.</p></div>
+              <b>08</b>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         11. DÚVIDAS
+         ========================================================== -->
+    <section class="section faq" id="duvidas">
+      <div class="shell">
+        <div class="faq__grid">
+
+          <div class="faq__aside">
+            <div class="faq__aside-inner">
+            <span class="label" data-reveal>Dúvidas frequentes</span>
+            <h2 data-split>Antes de agendar.</h2>
+            <p data-reveal data-delay="1">
+              Se a sua pergunta não estiver aqui, mande pelo WhatsApp. A equipe
+              responde no mesmo dia.
+            </p>
+            </div>
+          </div>
+
+          <div class="acc" data-accordion>
+            <div class="acc__item" data-acc-item data-open="true">
+              <h3>
+                <button class="acc__trigger" type="button" data-acc-trigger aria-expanded="true" aria-controls="faq-1">
+                  Quais são as formas de pagamento?
+                  <span class="acc__sign" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="acc__panel" id="faq-1" data-acc-panel>
+                <div><p class="acc__body">Dinheiro, PIX e cartão em até doze vezes.</p></div>
+              </div>
+            </div>
+
+            <div class="acc__item" data-acc-item data-open="false">
+              <h3>
+                <button class="acc__trigger" type="button" data-acc-trigger aria-expanded="false" aria-controls="faq-2">
+                  Atende planos de saúde?
+                  <span class="acc__sign" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="acc__panel" id="faq-2" data-acc-panel inert>
+                <div><p class="acc__body">Sim. As condições variam conforme o convênio: consulte a equipe pelo WhatsApp antes de agendar.</p></div>
+              </div>
+            </div>
+
+            <div class="acc__item" data-acc-item data-open="false">
+              <h3>
+                <button class="acc__trigger" type="button" data-acc-trigger aria-expanded="false" aria-controls="faq-3">
+                  Realiza procedimentos estéticos?
+                  <span class="acc__sign" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="acc__panel" id="faq-3" data-acc-panel inert>
+                <div><p class="acc__body">Não. O consultório não faz harmonização facial, preenchimentos, laser de rejuvenescimento nem aplicação de botox. A atuação é em dermatologia clínica e cirúrgica.</p></div>
+              </div>
+            </div>
+
+            <div class="acc__item" data-acc-item data-open="false">
+              <h3>
+                <button class="acc__trigger" type="button" data-acc-trigger aria-expanded="false" aria-controls="faq-4">
+                  Realiza procedimentos?
+                  <span class="acc__sign" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="acc__panel" id="faq-4" data-acc-panel inert>
+                <div><p class="acc__body">Sim, diversos, sempre após avaliação e individualização do caso: biópsias, retirada de sinais, cistos e verrugas, e cirurgia de lesões cutâneas.</p></div>
+              </div>
+            </div>
+
+            <div class="acc__item" data-acc-item data-open="false">
+              <h3>
+                <button class="acc__trigger" type="button" data-acc-trigger aria-expanded="false" aria-controls="faq-5">
+                  O Dr. Marcos tem RQE, o registro de especialista?
+                  <span class="acc__sign" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="acc__panel" id="faq-5" data-acc-panel inert>
+                <div><p class="acc__body">Sim, RQE 4581. Ele se graduou em Farmácia, depois em Medicina, fez residência médica em Dermatologia e foi aprovado na prova de títulos da Sociedade Brasileira de Dermatologia.</p></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       RODAPÉ
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer__cta" data-footer-cta>
+      <span class="footer__glow" aria-hidden="true"></span>
+      <div class="shell">
+        <h2 class="footer__cta-title" data-split>
+          Vamos cuidar da <em class="em">sua pele</em>?
+        </h2>
+        <div class="footer__cta-actions" data-reveal data-delay="2">
+          <a class="btn btn--accent btn--lg" data-cursor="whatsapp"
+             href="https://api.whatsapp.com/send?phone=5579999538910&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
+             target="_blank" rel="noopener">
+            <span class="btn__wipe" aria-hidden="true"></span>
+            <span class="btn__inner" data-text="Agendar pelo WhatsApp"><span class="btn__text">Agendar pelo WhatsApp</span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="shell">
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <img src="/assets/images/shared/logo.png" alt="Logotipo do Dr. Marcos Daniel Seabra" width="128" height="138" loading="lazy" />
+          <p>Dermatologia clínica e cirúrgica em Aracaju. Diagnóstico com nome, protocolo por escrito e acompanhamento que continua depois da consulta.</p>
+          <p><strong>CRM-SE 5939 · RQE 4581</strong></p>
+        </div>
+
+        <div>
+          <h3 class="footer__col-title label">Navegar</h3>
+          <ul class="footer__list">
+            <li><a href="#condicoes">O que tratamos</a></li>
+            <li><a href="#jornada">A consulta</a></li>
+            <li><a href="#sobre">Sobre o médico</a></li>
+            <li><a href="#autoexame">Autoexame ABCDE</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#duvidas">Dúvidas frequentes</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer__col-title label">Contato</h3>
+          <ul class="footer__list">
+            <li><a href="tel:+5579999538910">(79) 99953-8910</a></li>
+            <li><a href="https://api.whatsapp.com/send?phone=5579999538910" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/drmarcosdanielseabra" target="_blank" rel="noopener">Instagram</a></li>
+            <li><span>Segunda a sexta, com suporte de dúvidas no fim de semana</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer__col-title label">Onde atende</h3>
+          <div class="footer__place">
+            <strong>Clínica HOMO</strong>
+            <span>Aracaju · Sergipe</span>
+            <a class="link-underline" href="https://maps.app.goo.gl/Uxcn2zCvVvUzPnxZ9" target="_blank" rel="noopener">Ver no mapa</a>
+          </div>
+          <div class="footer__place">
+            <strong>Oncohematos</strong>
+            <span>Aracaju · Sergipe</span>
+            <a class="link-underline" href="https://maps.app.goo.gl/wzgvyuTKCfr9oFbN9" target="_blank" rel="noopener">Ver no mapa</a>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="footer__legal">
+        Responsável técnico: Dr. Marcos Daniel Seabra, CRM-SE 5939, RQE 4581.
+        O conteúdo deste site tem caráter informativo e não substitui a consulta
+        médica presencial. Resultados de tratamento variam de paciente para
+        paciente, conforme o quadro clínico, a adesão ao protocolo e outros
+        fatores individuais. Nenhuma informação aqui publicada deve ser usada
+        para autodiagnóstico ou automedicação.
+      </p>
+
+      <div class="footer__bar">
+        <span>© <span id="ano">2026</span> Dr. Marcos Daniel Seabra. Todos os direitos reservados.</span>
+        <span>Aracaju · Sergipe · Brasil</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Barra de contato flutuante (mobile) -->
+  <div class="dock" data-dock data-show="false">
+    <a class="btn btn--accent" href="https://api.whatsapp.com/send?phone=5579999538910&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">
+      <span class="btn__wipe" aria-hidden="true"></span>
+      <span class="btn__inner" data-text="WhatsApp"><span class="btn__text">WhatsApp</span></span>
+    </a>
+    <a class="btn btn--paper" href="tel:+5579999538910">
+      <span class="btn__wipe" aria-hidden="true"></span>
+      <span class="btn__inner" data-text="Ligar"><span class="btn__text">Ligar</span></span>
+    </a>
+  </div>
+
+  <!-- Bibliotecas servidas do próprio domínio, não de CDN.
+       Motivo concreto: scripts "defer" seguram o DOMContentLoaded, e é
+       nele que o site inicializa. Com CDN, uma rede lenta, um
+       bloqueador ou um firewall corporativo atrasavam (ou impediam) o
+       preloader, as entradas de texto e todos os gatilhos de rolagem
+       de uma vez — o site aparecia inteiro e completamente parado. -->
+  <script src="/vendor/gsap.min.js" defer></script>
+  <script src="/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="/vendor/lenis.min.js" defer></script>
+  <script type="module" src="/src/js/main.js"></script>
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

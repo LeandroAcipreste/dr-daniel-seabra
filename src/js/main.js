@@ -1,0 +1,93 @@
+/**
+ * Ponto de entrada.
+ *
+ * Orquestra e nada mais: componentes globais sobem sempre, a
+ * página específica sobe conforme o data-page do <body>. Toda a
+ * lógica pesada mora nos módulos importados — se este arquivo
+ * começar a crescer, é sinal de que algo nasceu no lugar errado.
+ *
+ * Ordem: componentes globais → smooth scroll → página. O reveal
+ * fica por último dentro do preloader, para nenhuma animação de
+ * entrada rodar atrás da cortina e ser desperdiçada.
+ */
+
+import { initNav } from './components/nav.js';
+import { initCursor } from './components/cursor.js';
+import { initMarquees } from './components/marquee.js';
+import { initAccordion } from './components/accordion.js';
+import { initReveal } from './components/reveal.js';
+import { initPreloader } from './components/preloader.js';
+import { initScrollEngine } from './libs/gsap-setup.js';
+import { initHome } from '../pages/home/home.js';
+
+const PAGES = {
+  home: initHome,
+};
+
+/**
+ * Toda carga da página começa no hero.
+ *
+ * São três coisas diferentes puxando o scroll para longe do topo, e
+ * cada uma precisa do seu tratamento:
+ *
+ *  1. a restauração de rolagem do navegador no F5 — desligada no
+ *     <head>, antes da primeira pintura, para não haver salto visível;
+ *  2. um hash na URL (#duvidas, por exemplo), que faz o navegador
+ *     pular para a seção sozinho — removido aqui, sem criar entrada
+ *     no histórico;
+ *  3. a volta pelo botão "voltar" com a página vinda do cache do
+ *     navegador (bfcache), que não dispara carregamento nenhum e por
+ *     isso precisa do listener de pageshow.
+ */
+function resetScroll() {
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+  if (window.location.hash) {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
+
+  window.scrollTo(0, 0);
+}
+
+function boot() {
+  resetScroll();
+
+  // O motor sobe antes das peças: cada uma consulta se há GSAP para
+  // decidir entre amarrar ao scroll ou só disparar uma classe CSS.
+  const motor = initScrollEngine();
+  if (motor?.lenis) motor.lenis.scrollTo(0, { immediate: true });
+
+  initNav();
+  initCursor();
+  initMarquees();
+  initAccordion();
+
+  const page = document.body.dataset.page;
+  const initPage = PAGES[page];
+  if (initPage) initPage();
+
+  // A cortina só sai depois que a página está montada; o reveal é
+  // ligado no mesmo instante, então a primeira dobra anima na
+  // frente do usuário em vez de já ter animado escondida.
+  initPreloader(() => {
+    window.scrollTo(0, 0);
+    // O corpo ficou travado enquanto a cortina cobria a tela, então a
+    // altura do documento acabou de mudar. Sem remedir, o Lenis pode
+    // seguir achando que a página não rola e engolir o primeiro
+    // clique num link de âncora.
+    if (motor?.lenis) motor.lenis.resize();
+    motor?.ScrollTrigger.refresh();
+    initReveal();
+  });
+}
+
+// A volta pelo cache do navegador não dispara boot() de novo.
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted) resetScroll();
+});
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', boot, { once: true });
+} else {
+  boot();
+}

@@ -1,0 +1,76 @@
+/* =============================================================
+   DESIGN TOKENS — Dr. Marcos Daniel Seabra
+   Paleta amostrada da logo da marca (turquesa #35B3C1, teal
+   profundo #2D818B, coral #F49368). O "ink" é um teal quase
+   preto: mantém a temperatura da marca no fundo escuro em vez
+   de cair num cinza neutro genérico.
+   ============================================================= */
+
+:root {
+  /* ---- Cor ---- */
+  --c-ink:            #06232a;   /* fundo escuro dominante          */
+  --c-ink-2:          #0b3038;   /* elevação dentro do escuro       */
+  --c-ink-3:          #124049;   /* bordas/divisores no escuro      */
+
+  --c-paper:          #f7f4f0;   /* off-white quente = fundo claro  */
+  --c-paper-2:        #efeae4;   /* elevação dentro do claro        */
+  --c-white:          #ffffff;
+
+  --c-brand:          #35b3c1;   /* turquesa da logo (primária)     */
+  --c-brand-deep:     #2d818b;   /* teal escuro da logo             */
+  --c-brand-soft:     #d7eff2;   /* turquesa lavado                 */
+
+  --c-accent:         #f49368;   /* coral da logo (acento quente)   */
+  --c-accent-deep:    #d9714a;
+  --c-accent-soft:    #fce7dc;
+
+  --c-text-on-dark:   #eef6f7;
+  --c-muted-on-dark:  #8fb0b6;
+  --c-text-on-light:  #06232a;
+  --c-muted-on-light: #5c7076;
+
+  --c-focus:          #f49368;
+
+  /* ---- Tipografia ---- */
+  --f-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --f-sans:    'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Escala tipográfica em rem — a raiz é fluida (ver base.css),
+     então todo o layout escala proporcionalmente com a viewport. */
+  --t-mega:    clamp(4.4rem, 11.5vw, 17rem);
+  --t-h1:      clamp(3.8rem, 7.6vw, 11rem);
+  --t-h2:      clamp(3.2rem, 5.4vw, 7.6rem);
+  --t-h3:      clamp(2.4rem, 3.2vw, 4.4rem);
+  --t-h4:      clamp(2rem, 2.2vw, 2.8rem);
+  --t-lead:    clamp(1.7rem, 1.55vw, 2.1rem);
+  --t-body:    1.6rem;
+  --t-sm:      1.4rem;
+  --t-label:   1.2rem;
+
+  /* ---- Ritmo e espaço ---- */
+  --gutter:     2.4rem;
+  --pad-x:      clamp(2rem, 5vw, 8rem);
+  --sec-y:      clamp(8rem, 12vw, 18rem);
+  --maxw:       168rem;
+  --radius-sm:  0.8rem;
+  --radius:     1.6rem;
+  --radius-lg:  2.8rem;
+  --radius-xl:  4rem;
+
+  /* ---- Movimento ----
+     Uma curva só para o site inteiro: entradas e saídas com o
+     mesmo "peso". Curvas extras só onde o gesto pede. */
+  --ease:        cubic-bezier(0.62, 0.05, 0.24, 1);
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: linear(0, .5737 7.6%, .8382 11.87%, 1.0292 16.54%, 1.1258 21.53%, 1.1424 24.48%, 1.1366 27.86%, 1.0507 38.62%, .9995 46.99%, .9842 58.77%, 1.0011 81.26%, 1);
+  --dur:         .55s;
+  --dur-fast:    .28s;
+
+  /* ---- Camadas ---- */
+  --z-canvas: 0;
+  --z-content: 1;
+  --z-nav: 50;
+  --z-menu: 60;
+  --z-cursor: 90;
+  --z-loader: 100;
+}
