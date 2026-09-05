@@ -52,9 +52,44 @@ function walk(el) {
  * @param {number}  maxDelay   teto do atraso, para frases longas não
  *                             levarem três segundos para aparecer
  */
+/* Sinais que, em português, pertencem à palavra anterior e jamais
+   podem abrir uma linha. */
+const NAO_ABRE_LINHA = /^[:;,.!?)]…»”%]+$/;
+
+/**
+ * Cola a pontuação na palavra que veio antes dela.
+ *
+ * O fatiador trabalha um nó de texto por vez, então um sinal logo
+ * depois de um <em> ou <mark> cai num nó próprio e vira uma "palavra"
+ * sozinha. E o navegador pode quebrar linha entre dois inline-block
+ * mesmo sem espaço entre eles — foi assim que os dois-pontos de
+ * "Especialista:" desceram para a linha de baixo.
+ *
+ * A solução envolve o par num invólucro que proíbe a quebra, em vez
+ * de juntar os textos: cada metade guarda a própria cor e o próprio
+ * atraso de animação.
+ */
+function colarPontuacao(el) {
+  const palavras = [...el.querySelectorAll('.w')];
+
+  for (let i = 1; i < palavras.length; i += 1) {
+    const sinal = palavras[i];
+    if (!NAO_ABRE_LINHA.test(sinal.textContent.trim())) continue;
+
+    const antes = palavras[i - 1];
+    if (antes.parentElement && antes.parentElement.classList.contains('w-par')) continue;
+
+    const par = document.createElement('span');
+    par.className = 'w-par';
+    antes.replaceWith(par);
+    par.append(antes, sinal);
+  }
+}
+
 export function splitWords(el, step = 0.028, maxDelay = 0.6) {
   if (el.dataset.splitDone === 'true') return;
   walk(el);
+  colarPontuacao(el);
   el.dataset.splitDone = 'true';
 
   el.querySelectorAll('.w__in').forEach((inner, i) => {

@@ -62,6 +62,11 @@ export function initNav() {
 
   burger.addEventListener('click', () => setOpen(!isOpen()));
 
+  // O X dentro do menu. Existe porque o overlay cobre a barra de
+  // navegação, e sem ele só restavam Esc ou clicar num link para sair.
+  const fechar = menu.querySelector('[data-menu-close]');
+  if (fechar) fechar.addEventListener('click', () => setOpen(false));
+
   menu.addEventListener('click', (e) => {
     if (e.target.closest('a')) setOpen(false);
   });

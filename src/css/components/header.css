@@ -166,6 +166,37 @@
   visibility: visible;
 }
 
+/* Fica na mesma coordenada do hambúrguer da barra: fechado e aberto,
+   o botão está sempre no mesmo lugar, então o gesto é um só. */
+.menu__close {
+  position: absolute;
+  top: 2.4rem;
+  right: var(--pad-x);
+  display: grid;
+  place-items: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: var(--c-accent);
+  color: var(--c-ink);
+  transition: transform var(--dur-fast) var(--ease-out),
+              background-color var(--dur-fast) var(--ease);
+}
+.menu__close svg { width: 2rem; height: 2rem; }
+@media (hover: hover) and (pointer: fine) {
+  .menu__close:hover { transform: rotate(90deg); background: var(--c-white); }
+}
+.menu__close:active { transform: scale(.94); }
+
+/* Entra junto com o menu, um pouco depois da cortina abrir. */
+.menu__close {
+  opacity: 0;
+  transition: opacity .3s var(--ease) .15s,
+              transform var(--dur-fast) var(--ease-out),
+              background-color var(--dur-fast) var(--ease);
+}
+.menu[data-open="true"] .menu__close { opacity: 1; }
+
 .menu__list { display: grid; gap: .4rem; }
 .menu__item { overflow: hidden; }
 .menu__link {

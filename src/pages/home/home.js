@@ -56,12 +56,14 @@ function initJourney() {
   // a seção sem o comportamento que carrega o conteúdo.
   const comTombo = !prefersReducedMotion();
 
-  // matchMedia do GSAP: monta em telas largas, desmonta sozinho ao
-  // estreitar, e refaz as medidas na volta. Sem ele, girar o aparelho
-  // deixaria pins presos em posições calculadas para outra largura.
+  // matchMedia do GSAP: remonta tudo quando a largura muda de faixa.
+  // Sem ele, girar o aparelho deixaria pins presos em posições
+  // calculadas para outra largura. A seção prende no celular também —
+  // é a mesma experiência do desktop, e a única diferença é o layout
+  // do card lá dentro, que o CSS resolve.
   const mm = gsap.matchMedia();
 
-  mm.add('(min-width: 1001px)', () => {
+  mm.add('(min-width: 1px)', () => {
     wraps.forEach((wrap, i) => {
       // 1. cada tela fica presa no topo até a última chegar lá
       ScrollTrigger.create({
@@ -295,7 +297,7 @@ function initVoices() {
   const { gsap, ScrollTrigger } = motor;
   const mm = gsap.matchMedia();
 
-  mm.add('(min-width: 1001px)', () => {
+  mm.add('(min-width: 1px)', () => {
     // Uma fatia de scroll por depoimento. 0.7 de tela por fatia é o
     // suficiente para a troca não parecer atropelada nem arrastada.
     const st = ScrollTrigger.create({
@@ -337,7 +339,6 @@ function initVoices() {
     };
   });
 
-  mm.add('(max-width: 1000px)', () => { manual(); });
 }
 
 /* -------------------------------------------------------------

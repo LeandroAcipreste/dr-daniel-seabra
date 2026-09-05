@@ -121,7 +121,35 @@ export function getScroll() {
 export function onScrollToggle(el, montar, desmontar, start = 'top 84%') {
   const motor = getScroll();
 
+  // Elemento dentro de uma caixa sticky ou de uma seção presa segue
+  // NA TELA muito depois de o gatilho achar que ele saiu — o
+  // ScrollTrigger mede a posição natural, não a posição colada. Sem
+  // esta exceção, o título da jornada desaparecia no meio da própria
+  // seção. Para eles o gesto é de mão única: monta e fica.
+  const fica = el.hasAttribute('data-keep');
+
   if (motor) {
+    if (fica) {
+      // O gatilho passa a ser a SEÇÃO, não o elemento. Medir um
+      // elemento que está dentro de uma caixa sticky dá a posição
+      // colada, não a real, e o disparo cai no lugar errado — foi o
+      // que fazia o título da jornada nunca aparecer.
+      //
+      // Mão única: monta e não desfaz. `once` cobre a rolagem normal;
+      // o onRefresh cobre quem chegou de salto (âncora, recarga no
+      // meio da página, barra arrastada), onde o onEnter nunca dispara
+      // porque o gatilho já ficou para trás.
+      const secao = el.closest('section') || el;
+      motor.ScrollTrigger.create({
+        trigger: secao,
+        start: 'top 92%',
+        once: true,
+        onEnter: () => montar(el),
+        onRefresh: (self) => { if (self.progress > 0) montar(el); },
+      });
+      return;
+    }
+
     motor.ScrollTrigger.create({
       trigger: el,
       start,
@@ -140,8 +168,8 @@ export function onScrollToggle(el, montar, desmontar, start = 'top 84%') {
 
   const io = new IntersectionObserver((entries) => {
     for (const entry of entries) {
-      if (entry.isIntersecting) montar(entry.target);
-      else desmontar(entry.target);
+      if (entry.isIntersecting) { montar(entry.target); if (fica) io.unobserve(entry.target); }
+      else if (!fica) desmontar(entry.target);
     }
   }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
 

@@ -15,7 +15,7 @@
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="Dr. Marcos Daniel Seabra" />
   <meta property="og:title" content="Dr. Marcos Daniel Seabra · Dermatologista em Aracaju" />
-  <meta property="og:description" content="Dermatologia clínica e cirúrgica. Você sai da consulta sabendo o nome da sua doença e com o plano por escrito." />
+  <meta property="og:description" content="Dermatologia clínica e cirúrgica em Aracaju. Título de especialista pela Sociedade Brasileira de Dermatologia e doutorado em andamento pela UFS." />
   <meta property="og:url" content="https://drmarcosdanielseabra.com/" />
   <meta property="og:image" content="https://drmarcosdanielseabra.com/assets/images/pages/home/dr-retrato.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -136,6 +136,15 @@
 
   <!-- Menu em tela cheia (mobile) -->
   <div class="menu" id="menu-principal" data-menu data-open="false">
+    <!-- O menu cobre a barra de navegação (z-index maior), então o
+         hambúrguer fica inalcançável embaixo dele. Este botão ocupa
+         exatamente a posição dele e fecha o menu. -->
+    <button class="menu__close" type="button" data-menu-close aria-label="Fechar menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18" />
+      </svg>
+    </button>
+
     <ul class="menu__list">
       <li class="menu__item"><a class="menu__link" href="#condicoes">O que tratamos</a></li>
       <li class="menu__item"><a class="menu__link" href="#jornada">A consulta</a></li>
@@ -170,17 +179,17 @@
           <div class="hero__copy">
             <p class="hero__eyebrow label" data-reveal>
               <i aria-hidden="true"></i>
-              Dermatologia clínica e cirúrgica · Aracaju
+              Consultório em Aracaju · Sergipe
             </p>
 
             <h1 class="hero__title" data-split>
-              Sua pele merece um diagnóstico <em class="em">com nome</em>.
+              Confie Sua Pele a um <em class="em">Especialista:</em> Dermatologia Clínica e Cirúrgica
             </h1>
 
             <p class="hero__lead lead" data-reveal data-delay="2">
-              <strong>Dermatologista e farmacêutico.</strong> Investigo a causa, digo exatamente
-              qual é a doença e monto o protocolo. O acompanhamento continua depois que
-              você sai do consultório.
+              <strong>Dr. Marcos Daniel Seabra.</strong> Título de especialista pela
+              Sociedade Brasileira de Dermatologia, residência no Hospital Universitário
+              da UFS e doutorado em andamento pela Universidade Federal de Sergipe.
             </p>
 
             <div class="hero__actions" data-reveal data-delay="3">
@@ -297,7 +306,7 @@
         <div class="shell journey__head-inner">
           <div>
             <span class="label">A consulta, passo a passo</span>
-            <h2 data-split>Da mensagem ao plano por escrito.</h2>
+            <h2 data-split data-keep>Da mensagem ao plano por escrito.</h2>
           </div>
           <div class="journey__meter">
             <span class="journey__count" data-journey-count>01 / 05</span>
@@ -672,7 +681,7 @@
         <div class="about__grid">
 
           <div class="about__media">
-            <div class="about__media-inner" data-clip>
+            <div class="about__media-inner" data-clip data-keep>
               <img src="/assets/images/pages/home/dr-retrato.jpg"
                    alt="Retrato do Dr. Marcos Daniel Seabra"
                    width="1025" height="1536" loading="lazy" data-parallax />
@@ -725,7 +734,7 @@
               <li>Premiação por pesquisa em hanseníase desenvolvida na UFS-Lagarto</li>
             </ul>
 
-            <div data-reveal data-delay="5">
+            <div class="about__cta" data-reveal data-delay="5">
               <a class="btn btn--ink btn--lg" data-cursor="agendar"
                  href="https://api.whatsapp.com/send?phone=5579999538910&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
                  target="_blank" rel="noopener">
@@ -886,7 +895,7 @@
       <div class="shell">
 
         <div class="voices__head">
-          <div data-reveal>
+          <div data-reveal data-keep>
             <span class="label">Depoimentos</span>
             <h2>O que os pacientes contam.</h2>
           </div>
@@ -1010,7 +1019,7 @@
           <div class="care__aside">
             <div class="care__aside-inner">
             <span class="label" data-reveal>A consulta</span>
-            <h2 data-split>O que muda quando o médico tem tempo.</h2>
+            <h2 data-split data-keep>O que muda quando o médico tem tempo.</h2>
             <p data-reveal data-delay="1">
               Nada aqui é cortesia de marketing. É o formato de atendimento que
               permite fechar um diagnóstico na primeira consulta em vez de na quinta.
@@ -1067,7 +1076,7 @@
           <div class="faq__aside">
             <div class="faq__aside-inner">
             <span class="label" data-reveal>Dúvidas frequentes</span>
-            <h2 data-split>Antes de agendar.</h2>
+            <h2 data-split data-keep>Antes de agendar.</h2>
             <p data-reveal data-delay="1">
               Se a sua pergunta não estiver aqui, mande pelo WhatsApp. A equipe
               responde no mesmo dia.
@@ -1169,7 +1178,7 @@
 
         <div class="footer__brand">
           <img src="/assets/images/shared/logo.png" alt="Logotipo do Dr. Marcos Daniel Seabra" width="128" height="138" loading="lazy" />
-          <p>Dermatologia clínica e cirúrgica em Aracaju. Diagnóstico com nome, protocolo por escrito e acompanhamento que continua depois da consulta.</p>
+          <p>Dermatologia clínica e cirúrgica em Aracaju. Título de especialista pela Sociedade Brasileira de Dermatologia, residência no Hospital Universitário da UFS e doutorado em andamento pela Universidade Federal de Sergipe.</p>
           <p><strong>CRM-SE 5939 · RQE 4581</strong></p>
         </div>
 

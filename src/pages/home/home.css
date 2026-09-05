@@ -92,10 +92,12 @@
 }
 
 .hero__title {
-  /* Um degrau abaixo do --t-h1 global: em 1440x900 a manchete
-     em tamanho cheio empurrava o botao de agendar para fora da
-     primeira dobra, que e onde ele precisa estar. */
-  font-size: clamp(3.6rem, 6.2vw, 9.4rem);
+  /* Dois degraus abaixo do --t-h1 global. A manchete tem sessenta
+     caracteres e quebra em quatro linhas; no tamanho cheio ela sozinha
+     comeria a primeira dobra e empurraria o botão de agendar para
+     fora dela, que é justamente onde ele precisa estar. */
+  font-size: clamp(2.8rem, 4.6vw, 6.6rem);
+  line-height: .96;
   margin-bottom: clamp(2.4rem, 3vw, 3.6rem);
 }
 /* A palavra que carrega a promessa recebe a cor de acento e a
@@ -516,29 +518,50 @@
   opacity: .82;
 }
 
-@media (max-width: 1000px) {
-  /* Sem prender e sem empilhar: em tela estreita a seção vira uma
-     lista comum de cards. Prender meia tela num celular custaria a
-     leitura, que é o que importa aqui. */
-  .journey { --jhead: auto; }
-  .journey__head { position: relative; height: auto; padding-block: var(--sec-y) 3.2rem; }
-  .journey__cards { margin-top: 0; display: grid; gap: 1.6rem; padding-bottom: var(--sec-y); }
-  .journey__wrap { height: auto; padding: 0 var(--pad-x); perspective: none; }
-  .jcard {
-    height: auto;
-    min-height: 34rem;
-    transform: none !important;
-    box-shadow: none;
-  }
-  .jcard__body { max-width: none; }
-  .jcard--photo .jcard__img { width: 38%; }
-  .jcard--photo::after { left: 46%; width: 16%; }
-}
+/* Em tela estreita a seção continua prendendo e trocando os cards —
+   é a mesma experiência do desktop. O que muda é só o layout DENTRO
+   do card: a faixa do título encolhe, o retrato passa a ocupar o
+   card inteiro atrás de um véu, e a tipografia desce um degrau. */
+@media (max-width: 900px) {
+  .journey { --jhead: clamp(11rem, 20vh, 16rem); }
 
-@media (max-width: 620px) {
-  .jcard--photo .jcard__img { position: relative; inset: auto; width: 100%; height: 18rem; border-radius: var(--radius); }
-  .jcard--photo::after { display: none; }
-  .jcard__idx { font-size: 4.4rem; }
+  .journey__head-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.2rem;
+  }
+  .journey__head .label { margin-bottom: .8rem; }
+  .journey__head h2 { max-width: none; font-size: clamp(2.8rem, 8vw, 4.4rem); }
+  .journey__meter { min-width: 0; padding-bottom: 0; }
+
+  /* A barra flutuante de contato fica por cima do rodapé da tela.
+     Reservar a altura dela evita que o texto do card termine
+     escondido atrás do botão do WhatsApp. */
+  .journey__wrap { padding: calc(var(--jhead) + 1.5vh) var(--pad-x) 9rem; }
+
+  .jcard { padding: clamp(2rem, 5.5vw, 3.2rem); gap: 1.6rem; }
+  .jcard__idx { font-size: clamp(3.6rem, 13vw, 6.4rem); }
+  .jcard__tag { font-size: 1.15rem; padding: .5rem 1.1rem; }
+  .jcard__title { font-size: clamp(2.6rem, 8vw, 4.2rem); }
+  .jcard__text { font-size: var(--t-sm); }
+  .jcard__body { max-width: none; }
+
+  /* O retrato vira o fundo do card: dividir em duas colunas num
+     celular deixaria foto e texto estreitos demais. O véu sobe do
+     rodapé só até onde o texto vai, preservando o rosto. */
+  .jcard--photo .jcard__img { inset: 0; width: 100%; }
+  .jcard--photo::after {
+    inset: 0;
+    left: 0;
+    width: auto;
+    background: linear-gradient(to top,
+      var(--c-ink) 4%,
+      rgba(6, 35, 42, .82) 38%,
+      rgba(6, 35, 42, .25) 62%,
+      transparent 82%);
+  }
+  .jcard--photo { --jcard-bg: var(--c-ink); }
+  .jcard:not(.jcard--photo)::before { width: 46%; right: -12%; top: -18%; }
 }
 
 /* =============================================================
@@ -820,6 +843,11 @@
 }
 .about__reg span { padding: .8rem 1.6rem; border-radius: 70rem; background: var(--c-brand-soft); }
 
+/* O botão fecha a coluna centralizado: sozinho embaixo de uma lista
+   numerada, alinhado à esquerda ele parecia mais um item da lista do
+   que o encerramento dela. */
+.about__cta { display: flex; justify-content: center; }
+
 /* Qualificações: lista numerada, sem ícone genérico de "check". */
 .quals { display: grid; gap: 0; border-top: 1px solid rgba(6, 35, 42, .14); }
 .quals li {
@@ -980,7 +1008,13 @@
 .abcde__result[data-level="1"] .abcde__result-title { color: var(--c-brand); }
 .abcde__result[data-level="2"] .abcde__result-title { color: var(--c-accent); }
 .abcde__result[data-level="3"] .abcde__result-title { color: var(--c-accent); }
-.abcde__actions { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: .8rem; }
+.abcde__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: .8rem;
+}
 
 /* =============================================================
    9. DEPOIMENTOS
@@ -998,7 +1032,8 @@
   display: flex;
   align-items: center;
 }
-@media (max-width: 1000px) { .voices { min-height: 0; display: block; } }
+/* Mesmo motivo da jornada: a barra de contato cobre o rodapé. */
+@media (max-width: 900px) { .voices { padding-bottom: calc(var(--sec-y) + 6rem); } }
 
 .voices__head {
   display: flex;

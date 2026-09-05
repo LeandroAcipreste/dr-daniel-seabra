@@ -21,6 +21,13 @@
   padding-bottom: .14em;
   margin-bottom: -.14em;
 }
+/* Palavra + pontuação viajam juntas. Sem isso o navegador quebra a
+   linha entre os dois inline-block e o sinal abre a linha seguinte. */
+.w-par {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .w__in {
   display: inline-block;
   transform: translateY(115%);
