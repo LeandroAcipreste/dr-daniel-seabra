@@ -20,8 +20,8 @@
   <meta property="og:image" content="https://drmarcosdanielseabra.com/assets/images/pages/home/dr-retrato.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" href="/assets/images/shared/logo.png" type="image/png" />
-  <link rel="apple-touch-icon" href="/assets/images/shared/logo.png" />
+  <link rel="icon" href="assets/images/shared/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/images/shared/logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,11 +30,11 @@
   <!-- O retrato do hero e a máscara que o recorta são carregados
        juntos: se a máscara chegar depois, a foto aparece por um
        instante com o fundo branco do estúdio sobre o bloco escuro. -->
-  <link rel="preload" as="image" href="/assets/images/pages/home/dr-recorte.jpg" fetchpriority="high" />
-  <link rel="preload" as="image" href="/assets/images/pages/home/dr-recorte-mask.png" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/images/pages/home/dr-recorte.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/images/pages/home/dr-recorte-mask.png" fetchpriority="high" />
 
-  <link rel="stylesheet" href="/src/css/style.css" />
-  <link rel="stylesheet" href="/src/pages/home/home.css" />
+  <link rel="stylesheet" href="src/css/style.css" />
+  <link rel="stylesheet" href="src/pages/home/home.css" />
 
   <!-- Desliga a restauração de rolagem do navegador antes de qualquer
        pintura. Sem isso, um F5 no meio da página devolve a pessoa ao
@@ -80,7 +80,7 @@
        ============================================================ -->
   <div class="loader" data-loader role="status" aria-live="polite">
     <div class="loader__inner">
-      <img class="loader__mark" src="/assets/images/shared/logo.png" alt="" width="120" height="130" />
+      <img class="loader__mark" src="assets/images/shared/logo.png" alt="" width="120" height="130" />
       <div class="loader__bar"><i data-loader-bar></i></div>
       <span class="loader__count" data-loader-count>000</span>
       <span class="sr-only">Carregando o site</span>
@@ -99,7 +99,7 @@
     <span class="nav__plate" aria-hidden="true"></span>
 
     <a class="nav__brand" href="#top" aria-label="Dr. Marcos Daniel Seabra, início">
-      <img src="/assets/images/shared/logo.png" alt="" width="76" height="82" />
+      <img src="assets/images/shared/logo.png" alt="" width="76" height="82" />
       <span class="nav__brand-text">
         <span class="nav__brand-name">Marcos Daniel Seabra</span>
         <span class="nav__brand-role">Dermatologista</span>
@@ -173,6 +173,7 @@
     <section class="hero" id="top">
       <span class="hero__blob" aria-hidden="true"></span>
 
+
       <div class="shell hero__shell">
         <div class="hero__grid">
 
@@ -192,6 +193,7 @@
               da UFS e doutorado em andamento pela Universidade Federal de Sergipe.
             </p>
 
+
             <div class="hero__actions" data-reveal data-delay="3">
               <a class="btn btn--accent btn--lg" data-cursor="agendar"
                  href="https://api.whatsapp.com/send?phone=5579999538910&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
@@ -203,24 +205,18 @@
                 <span class="btn__wipe" aria-hidden="true"></span>
                 <span class="btn__inner" data-text="O que tratamos"><span class="btn__text">O que tratamos</span></span>
               </a>
+              <div class="hero__seal" aria-hidden="true">
+                <svg viewBox="0 0 100 100">
+                  <defs>
+                    <path id="selo-hero" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" />
+                  </defs>
+                  <text><textPath href="#selo-hero">CRM-SE 5939 · RQE 4581 · Sociedade Brasileira de Dermatologia ·&nbsp;</textPath></text>
+                </svg>
+                <span class="hero__seal-core">Título<br />SBD</span>
+              </div>
             </div>
           </div>
 
-          <figure class="hero__figure" data-reveal data-delay="2">
-            <img src="/assets/images/pages/home/dr-recorte.jpg"
-                 alt="Dr. Marcos Daniel Seabra, dermatologista, de braços cruzados e sorrindo"
-                 width="1000" height="1498" data-preload fetchpriority="high" />
-
-            <div class="hero__seal" aria-hidden="true">
-              <svg viewBox="0 0 100 100">
-                <defs>
-                  <path id="selo-hero" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" />
-                </defs>
-                <text><textPath href="#selo-hero">CRM-SE 5939 · RQE 4581 · Sociedade Brasileira de Dermatologia ·&nbsp;</textPath></text>
-              </svg>
-              <span class="hero__seal-core">Título<br />SBD</span>
-            </div>
-          </figure>
 
         </div>
 
@@ -231,6 +227,12 @@
           </span>
         </div>
       </div>
+      <figure class="hero__figure">
+        <img src="assets/images/pages/home/dr-recorte.jpg"
+             alt="Dr. Marcos Daniel Seabra, dermatologista, de braços cruzados e sorrindo"
+             width="1000" height="1498" data-preload fetchpriority="high" />
+
+      </figure>
     </section>
 
     <!-- ==========================================================
@@ -336,7 +338,7 @@
 
         <div class="journey__wrap" data-wrap>
           <article class="jcard jcard--photo" data-card>
-            <img class="jcard__img" src="/assets/images/pages/home/dr-jaleco.jpg" alt="" width="700" height="1048" loading="lazy" decoding="async" />
+            <img class="jcard__img" src="assets/images/pages/home/dr-jaleco.jpg" alt="" width="700" height="1048" loading="lazy" decoding="async" />
             <div class="jcard__top">
               <span class="jcard__idx">02</span>
               <span class="jcard__tag">Anamnese completa</span>
@@ -376,7 +378,7 @@
 
         <div class="journey__wrap" data-wrap>
           <article class="jcard jcard--photo" data-card>
-            <img class="jcard__img" src="/assets/images/pages/home/dr-retrato.jpg" alt="" width="1025" height="1536" loading="lazy" decoding="async" />
+            <img class="jcard__img" src="assets/images/pages/home/dr-retrato.jpg" alt="" width="1025" height="1536" loading="lazy" decoding="async" />
             <div class="jcard__top">
               <span class="jcard__idx">05</span>
               <span class="jcard__tag">Suporte 7 dias</span>
@@ -682,7 +684,7 @@
 
           <div class="about__media">
             <div class="about__media-inner" data-clip data-keep>
-              <img src="/assets/images/pages/home/dr-retrato.jpg"
+              <img src="assets/images/pages/home/dr-retrato.jpg"
                    alt="Retrato do Dr. Marcos Daniel Seabra"
                    width="1025" height="1536" loading="lazy" data-parallax />
 
@@ -1177,7 +1179,7 @@
       <div class="footer__grid">
 
         <div class="footer__brand">
-          <img src="/assets/images/shared/logo.png" alt="Logotipo do Dr. Marcos Daniel Seabra" width="128" height="138" loading="lazy" />
+          <img src="assets/images/shared/logo.png" alt="Logotipo do Dr. Marcos Daniel Seabra" width="128" height="138" loading="lazy" />
           <p>Dermatologia clínica e cirúrgica em Aracaju. Título de especialista pela Sociedade Brasileira de Dermatologia, residência no Hospital Universitário da UFS e doutorado em andamento pela Universidade Federal de Sergipe.</p>
           <p><strong>CRM-SE 5939 · RQE 4581</strong></p>
         </div>
@@ -1254,10 +1256,10 @@
        bloqueador ou um firewall corporativo atrasavam (ou impediam) o
        preloader, as entradas de texto e todos os gatilhos de rolagem
        de uma vez — o site aparecia inteiro e completamente parado. -->
-  <script src="/vendor/gsap.min.js" defer></script>
-  <script src="/vendor/ScrollTrigger.min.js" defer></script>
-  <script src="/vendor/lenis.min.js" defer></script>
-  <script type="module" src="/src/js/main.js"></script>
+  <script src="vendor/gsap.min.js" defer></script>
+  <script src="vendor/ScrollTrigger.min.js" defer></script>
+  <script src="vendor/lenis.min.js" defer></script>
+  <script type="module" src="src/js/main.js"></script>
   <script>
     document.getElementById('ano').textContent = new Date().getFullYear();
   </script>

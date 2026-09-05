@@ -37,11 +37,17 @@ export function initReveal(root = document) {
   for (const el of targets) {
     if (el.hasAttribute('data-split')) splitWords(el);
 
-    onScrollToggle(el, montar, desmontar, el.dataset.start || 'top 84%');
+    // Quem já nasce dentro da primeira tela precisa de um gatilho que
+    // JÁ esteja ativo em scroll zero. Com o limiar padrão (top 84%),
+    // um elemento colado no rodapé do hero fica abaixo dele: era
+    // montado à mão aqui e o ScrollTrigger o desmontava no primeiro
+    // refresh, deixando-o deslocado 3.2rem e invisível.
+    const naPrimeiraDobra = el.getBoundingClientRect().top < window.innerHeight;
+    const inicio = naPrimeiraDobra ? 'top bottom' : (el.dataset.start || 'top 84%');
 
-    // O que já está na primeira dobra entra assim que a cortina sai.
-    // Deixar isso para o gatilho significaria uma faixa morta no
-    // rodapé do hero, logo abaixo do limiar dele.
-    if (el.getBoundingClientRect().top < window.innerHeight) montar(el);
+    onScrollToggle(el, montar, desmontar, inicio);
+
+    // Entra assim que a cortina sai, sem esperar rolagem.
+    if (naPrimeiraDobra) montar(el);
   }
 }

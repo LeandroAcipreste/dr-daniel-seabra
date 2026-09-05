@@ -15,7 +15,7 @@
   min-height: 100svh;
   display: flex;
   align-items: flex-end;
-  padding-top: 12rem;
+  padding-top: 9rem;
   padding-bottom: 3rem;
   background: var(--c-ink);
   color: var(--c-text-on-dark);
@@ -66,7 +66,8 @@
   align-items: end;
 }
 
-.hero__copy { grid-column: 1 / 8; }
+/* Ancora o selo, que é posicionado em relação a esta coluna. */
+.hero__copy { grid-column: 1 / 8; position: relative; }
 
 .hero__eyebrow {
   display: inline-flex;
@@ -96,9 +97,9 @@
      caracteres e quebra em quatro linhas; no tamanho cheio ela sozinha
      comeria a primeira dobra e empurraria o botão de agendar para
      fora dela, que é justamente onde ele precisa estar. */
-  font-size: clamp(2.8rem, 4.6vw, 6.6rem);
-  line-height: .96;
-  margin-bottom: clamp(2.4rem, 3vw, 3.6rem);
+  font-size: clamp(2.6rem, 4.1vw, 5.8rem);
+  line-height: .98;
+  margin-bottom: clamp(1.8rem, 2.2vw, 2.8rem);
 }
 /* A palavra que carrega a promessa recebe a cor de acento e a
    itálica da Fraunces. É o único destaque de cor do título. */
@@ -107,33 +108,45 @@
 .hero__lead {
   max-width: 52ch;
   color: var(--c-muted-on-dark);
-  margin-bottom: clamp(3rem, 4vw, 4.4rem);
+  margin-bottom: clamp(2.2rem, 2.8vw, 3.4rem);
 }
 .hero__lead strong { color: var(--c-text-on-dark); font-weight: 500; }
 
 .hero__actions {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 1.6rem;
 }
 
+/* Fora da grade: presa ao canto inferior direito da seção, ela
+   encosta exatamente na faixa de credenciais que vem logo abaixo.
+   Dentro da grade, a altura dela mandava na altura da linha e
+   empurrava o texto. */
+/* Sem [data-reveal] aqui de propósito: aquele gesto entra com um
+   translateY de 3.2rem, e num elemento que precisa encostar na borda
+   de baixo o deslocamento vira uma folga de 32px que não fecha. */
 .hero__figure {
-  position: relative;
-  grid-column: 8 / 13;
-  align-self: end;
-  margin-bottom: -4rem;
+  position: absolute;
+  right: var(--pad-x);
+  bottom: 0;
+  z-index: 1;
+  margin: 0;
+  pointer-events: none;
 }
 /* A foto de estudio vem sobre fundo branco. Em vez de servir um
    PNG com alfa de 1,2 MB, servimos o JPG (102 KB) recortado por
    uma mascara em tons de cinza de 16 KB: mesmo resultado, um
    decimo do peso. */
 .hero__figure img {
-  height: min(56svh, 70rem);
+  height: min(88svh, 104rem);
   width: auto;
-  margin-left: auto;
-  -webkit-mask-image: url('/assets/images/pages/home/dr-recorte-mask.png');
-  mask-image: url('/assets/images/pages/home/dr-recorte-mask.png');
+  display: block;
+  /* Relativo ao ARQUIVO CSS, não à página: este arquivo mora em
+     src/pages/home/, então sobe três níveis até a raiz do projeto. */
+  -webkit-mask-image: url('../../../assets/images/pages/home/dr-recorte-mask.png');
+  mask-image: url('../../../assets/images/pages/home/dr-recorte-mask.png');
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
   -webkit-mask-repeat: no-repeat;
@@ -143,13 +156,23 @@
 
 /* Selo giratório com o registro profissional — o dado que o CFM
    exige, tratado como elemento gráfico em vez de rodapé. */
+/* Encostado na borda direita da coluna de texto, na altura do
+   parágrafo de apresentação: fica longe da manchete, longe dos
+   botões, e cai sobre a margem transparente da foto — não sobre o
+   Dr. Marcos. */
+/* Ancorado na linha dos botões e encostado na borda direita da
+   coluna de texto. Ali é o único vão que fica livre em todas as
+   larguras: abaixo do parágrafo, ao lado dos botões e antes de onde
+   o retrato começa. */
 .hero__seal {
   position: absolute;
-  left: -6rem;
-  top: 8%;
-  width: 13rem; height: 13rem;
+  right: 0;
+  top: 50%;
+  translate: 0 -50%;
+  width: 11rem; height: 11rem;
   display: grid;
   place-items: center;
+  pointer-events: none;
 }
 .hero__seal svg { width: 100%; height: 100%; animation: spin-slow 26s linear infinite; }
 .hero__seal text { font-size: 8.4px; letter-spacing: .28em; fill: var(--c-brand-soft); text-transform: uppercase; font-weight: 500; }
@@ -175,7 +198,7 @@
 .hero__foot {
   display: flex;
   justify-content: flex-end;
-  margin-top: clamp(2rem, 2.6vw, 3.2rem);
+  margin-top: clamp(1rem, 1.2vw, 1.6rem);
 }
 .hero__scroll {
   display: inline-flex;
@@ -188,7 +211,7 @@
 }
 .hero__scroll i {
   display: block;
-  width: 1px; height: 3.6rem;
+  width: 1px; height: 2.8rem;
   background: linear-gradient(var(--c-accent), transparent);
   animation: scroll-hint 2.2s var(--ease) infinite;
   transform-origin: 50% 0;
@@ -200,7 +223,22 @@
 }
 
 @media (max-width: 1100px) {
-  .hero { align-items: flex-start; padding-top: 13rem; }
+  .hero { align-items: flex-start; padding-top: 13rem; padding-bottom: 0; }
+  /* A .hero deixa de ser flex aqui. Com a foto virando filha direta
+     dela, em flex ela passava a ser um ITEM e roubava largura do
+     texto — foi o que jogou a coluna inteira para o lado no tablet.
+     Em bloco, a foto simplesmente vem depois do texto, e como a soma
+     dos dois passa da altura da tela, ela encosta na faixa de
+     credenciais aqui também. */
+  .hero { display: block; }
+  .hero__figure {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: clamp(2.4rem, 5vw, 4rem);
+  }
   .hero__grid { grid-template-columns: repeat(6, 1fr); }
   .hero__copy { grid-column: 1 / 7; }
 
@@ -213,7 +251,7 @@
     display: flex;
     justify-content: center;
   }
-  .hero__figure img { height: min(38svh, 42rem); margin: 0; }
+  .hero__figure img { height: min(52svh, 62rem); margin: 0; }
   .hero__seal { display: none; }
   .hero__blob { right: -34vw; bottom: 8vh; width: 96vw; }
 }
